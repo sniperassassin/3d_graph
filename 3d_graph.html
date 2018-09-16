@@ -1,0 +1,157 @@
+<html>
+<head>
+	<title>
+		3d | Bars
+	</title>
+	<style>
+		.wrapper{
+			width:100%;
+			min-height:100%;
+			text-align:center;
+			position:absolute;
+			top:80px;
+			display:block;
+		}
+		.progress-wrapper{
+			width:60px;
+			height:300px;
+			top:50%;
+			left:30%;
+			position: absolute;
+			transform:translate(-50%,-50%);
+		}
+		.progressbar{
+			width:100%;
+			height:100%;
+			transform-style:preserve-3d;
+			transform:rotateX(-20deg) rotateY(-30deg);
+
+		}
+		.side{
+			width:100%;
+			height:100%;
+			background: rgba(157,153,243,.2);
+			top:0;
+			left:0;
+			position:absolute;
+		}
+		.bottom{
+			transform:rotateX(90deg);
+			transform-origin:bottom;
+			height:60px;
+			position:absolute;
+			top:240px;
+			box-shadow: 10px 10px 50px 5px rgba(90,90,90,0.7);
+			background: rgba(8,20,247,.7);
+		}
+		.back{
+			transform:translateZ(-60px);
+			background: rgba(8,20,247,.9);
+		}
+		.left{
+			width:60px;
+			transform:rotateY(90deg);
+			transform-origin:left;
+			background: rgba(8,20,247,1);
+		}
+		.top{
+			height:60px;
+			transform:translate(0,-100%) rotateX(90deg);
+			transform-origin:bottom;
+			background: rgba(157,153,243,.3);
+		}
+		.right{
+			transform:rotateY(-90deg);
+			transform-origin:right;
+			background: rgba(157,153,243,.2);
+		}
+		.bar{
+			position:absolute;
+			bottom:0%;
+			height:70%;
+			width:100%;
+			background: rgba(255,0,120,0.6);
+		}
+		.btn{
+			position:absolute;
+			left:30%;
+			top:10px;
+			padding:5px;
+			transform:translate(-50%);
+			border:white;
+		}
+		.btn input{
+		background:none;
+		border:2px solid #4bc54b;
+		cursor: pointer;
+		outline:none;
+		color:black;
+		width:60%;
+		font-family: cursive;
+		border-radius: 10px;
+		text-align: center;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="progress-wrapper">
+			<div class="progressbar">
+				<div class="side front"><div class="bar one"></div></div>
+				<div class="side back"><div class="bar one"></div></div>
+				<div class="side top"><div class="bar" style="height:100%;"></div></div>
+				<div class="side bottom"><div class="bar" style="height:100%;"></div></div>
+				<div class="side left"><div class="bar one"></div></div>
+				<div class="side right"><div class="bar one"></div></div>
+			</div>
+		</div>
+		<div class="btn"><input type="number" placeholder="Number" class="btn1"></div>
+		<div class="progress-wrapper" style="left:40%;">
+			<div class="progressbar">
+				<div class="side front"><div class="bar two"></div></div>
+				<div class="side back"><div class="bar two"></div></div>
+				<div class="side top"><div class="bar" style="height:100%;"></div></div>
+				<div class="side bottom"><div class="bar" style="height:100%;"></div></div>
+				<div class="side left"><div class="bar two"></div></div>
+				<div class="side right"><div class="bar two"></div></div>
+			</div>
+		</div>
+		<div class="btn" style="left:40%;"><input type="number" placeholder="Number" class="btn2"></div>
+		<div class="progress-wrapper" style="left:50%;">
+			<div class="progressbar">
+				<div class="side front"><div class="bar three"></div></div>
+				<div class="side back"><div class="bar three"></div></div>
+				<div class="side top"><div class="bar" style="height:100%;"></div></div>
+				<div class="side bottom"><div class="bar" style="height:100%;"></div></div>
+				<div class="side left"><div class="bar three"></div></div>
+				<div class="side right"><div class="bar three"></div></div>
+			</div>
+		</div>
+		<div class="btn" style="left:50%;"><input type="number" placeholder="Number" class="btn3"></div>
+		<div class="progress-wrapper" style="left:60%;">
+			<div class="progressbar">
+				<div class="side front"><div class="bar four"></div></div>
+				<div class="side back"><div class="bar four"></div></div>
+				<div class="side top"><div class="bar" style="height:100%;"></div></div>
+				<div class="side bottom"><div class="bar" style="height:100%;"></div></div>
+				<div class="side left"><div class="bar four"></div></div>
+				<div class="side right"><div class="bar four"></div></div>
+			</div>
+		</div>
+		<div class="btn" style="left:60%;"><input type="number" placeholder="Number" class="btn4"></div>
+		<div class="btn" style="left:70%;width:10%;"><input type="submit" placeholder="Submit" class="click"></div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".click").click(function(){
+		        $('.one').css('height', $(".btn1").val()+"%");
+		        $('.two').css('height', $(".btn2").val()+"%");
+		        $('.three').css('height', $(".btn3").val()+"%");
+		        $('.four').css('height', $(".btn4").val()+"%");
+		    });
+		})
+	</script>
+</body>
+</html>
